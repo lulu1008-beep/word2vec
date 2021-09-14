@@ -1,4 +1,16 @@
 # word2vec
+Questions 09/14/21:
+All the scripts so far run smoothly, but a number looks suspecious to me. 
+
+The len(model.wv.vocab) shows the size of the new model that was built on the pretrained google news embeddings. 
+
+The Crown corpus (which is modelled after the Brown corpus) is 1 million words, but the len(model.wv.vocab)=3000021. This means it only has 21 new words in the whole Crown corpus. However, I tried to use only one text file to test it, and found the len(model.wv.vocab)=3000013. When comparing the two results, this looks suspecious. 
+
+Could you help me to see if this is normal? And if not, where goes wrong? Thank you! 
+
+
+
+
 Questions 08/25/21:
 line 23, in <module>
     model.build_vocab(my_corpus,update=True)
