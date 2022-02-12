@@ -23,18 +23,3 @@ with open("./top100_Crown_negW.txt", 'w', encoding='utf8') as text1:
             text1.write(str(similar) +'\n')
     #print(len(str(similar)))
 
-
-'''
-import nltk
-from nltk.corpus import wordnet
-nltk.download('wordnet')
-synonyms=[]
-antonyms=[]
-for syn in wordnet.synsets("warmth"):
-    for l in syn.lemmas():
-        synonyms.append(l.name())
-        if l.antonyms():
-            antonyms.append(l.antonyms()[0].name())
-print(set(synonyms))
-print(set(antonyms))
-'''
