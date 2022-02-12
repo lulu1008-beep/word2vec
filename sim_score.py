@@ -4,15 +4,6 @@ from gensim.models import KeyedVectors
 # todo
 model = KeyedVectors.load_word2vec_format("./Brown_vector.bin", encoding='utf8', binary=True)
 
-whites = list(set(['American', 'Americans', 'America',
-                   'U.S.', 'USA', 'U.S.A.', 'US', 'Germany', 'Germans',
-                   'German-born', 'German', 'European', 'Europe', 'Europeans',
-                   'England',
-                   'Russia', 'Russian', 'Russians', 'Copenhagen', 'France',
-                   'French', 'Frenchman', 'Frenchmen', 'Italian', 'Italy',
-                   'Italians', 'Britain', 'British', 'Florence',
-                   'Parisian', 'Paris']))
-
 whites_new=list(set(['American', 'Americans', 'America',
                    'U.S.', 'USA', 'U.S.A.', 'US', 'Germany', 'Germans',
                    'German-born', 'German', 'European', 'Europe', 'Europeans',
@@ -29,8 +20,7 @@ whites_new=list(set(['American', 'Americans', 'America',
 
 
 blacks = list(set(['African', 'African-American', 'Africa', 'Egyptians', 'Egyptian', 'Africans', 'Egyptian', 'Egypt']))
-hispanics = list(
-    set(['Cuban-Americans', 'Cuban-Americans', 'Cuba', 'Hispanic', 'Cubans', 'Cuban', 'Mexico', 'Mexican', 'Mexicans',
+hispanics = list(set(['Cuban-Americans', 'Cuban-Americans', 'Cuba', 'Hispanic', 'Cubans', 'Cuban', 'Mexico', 'Mexican', 'Mexicans',
          'Hispanics']))
 
 asians = list(set(['Asian', 'Asia', 'Asiatic', 'Pakistani', 'Pakistan',
@@ -79,29 +69,3 @@ df2 = df.groupby('quality').mean()
 print(df2)
 # todo
 df2.to_csv('./top 100/Brown_LC_NewW_sim_groupby_modified.csv')
-
-
-
-
-
-
-'''
-
-scores_hc = {}
-for pair in pairs_hc:
-    try:
-        results = model.wv.similarity(pair[0],pair[1])
-    except KeyError:
-        results = 0
-    scores_hc[pair] = {'attribute': pair[0], 'people': pair[1],'telegraaf': results}
-
-#print(scores_hc)
-
-df_hc = pd.DataFrame(scores_hc).T
-
-print(df_hc)
-df_hc.to_csv('./output_hc.csv')
-
-df2=df_hc.groupby('attribute').mean()
-print(df2)
-'''
