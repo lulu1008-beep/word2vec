@@ -17,8 +17,6 @@ whites_new=list(set(['American', 'Americans', 'America',
                    "Afghan", 'Afghans', "Arab", 'Arabia', 'Arabs',
                    'Arabian', 'Arabic', "Judaism"]))
 
-
-
 blacks = list(set(['African', 'African-American', 'Africa', 'Egyptians', 'Egyptian', 'Africans', 'Egyptian', 'Egypt']))
 hispanics = list(set(['Cuban-Americans', 'Cuban-Americans', 'Cuba', 'Hispanic', 'Cubans', 'Cuban', 'Mexico', 'Mexican', 'Mexicans',
          'Hispanics']))
