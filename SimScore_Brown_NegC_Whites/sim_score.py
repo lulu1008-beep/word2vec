@@ -1,7 +1,7 @@
 import pandas as pd
 from gensim.models import KeyedVectors
 
-# todo
+
 model = KeyedVectors.load_word2vec_format("./Brown_vector.bin", encoding='utf8', binary=True)
 
 whites_new=list(set(['American', 'Americans', 'America',
@@ -29,7 +29,7 @@ asians = list(set(['Asian', 'Asia', 'Asiatic', 'Pakistani', 'Pakistan',
                    'Indian', 'India', 'Indians', 'Tibetan',
                    'Tibet', 'Tibetans', 'Hindu', 'Hindus', 'Taiwanese', 'Taiwan']))
 
-# todo: 5 places
+
 read_file = pd.read_csv('./top 100/Brown_LC_new.txt')
 read_file.to_csv('./top 100/Brown_LC_1.csv', index=None)
 cols = []
