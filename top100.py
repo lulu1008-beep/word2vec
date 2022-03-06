@@ -23,3 +23,4 @@ with open("./top100_Crown_negW.txt", 'w', encoding='utf8') as text1:
             text1.write(str(similar) +'\n')
     #print(len(str(similar)))
 
+   
