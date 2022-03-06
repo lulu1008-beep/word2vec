@@ -1,4 +1,4 @@
-import nltk
+import nltk  
 import glob
 import gensim
 import nltk.data
