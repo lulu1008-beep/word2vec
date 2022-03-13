@@ -25,18 +25,18 @@ with open('./Combined_Brown.txt', 'w', encoding='utf8') as outfile:
 
 with open("./Combined_Brown.txt", 'r', encoding='utf8') as inputfile:
     lines=inputfile.readlines()
-b=''
+processed_sent_1=''
 for line in lines:
         line = line[14:]
-        b+= line.lstrip()
-c=b.replace('\n', ' ')
-y=''.join(c)
-#print(y)
-with open("./Combined_Brown_no_number.txt", 'w', encoding='utf8') as inputfile1:
-    inputfile1.write(y)
+        processed_sent_1+= line.lstrip()
+processed_sent_2=processed_sent_1.replace('\n', ' ')
+final_sent=''.join(processed_sent_2)
 
-a = tokenize.sent_tokenize(y)
-my_corpus = list(map(lambda x: nltk.word_tokenize(x), a))
+with open("./Combined_Brown_no_number.txt", 'w', encoding='utf8') as inputfile1:
+    inputfile1.write(final_sent)
+
+tokenized_final_sent = tokenize.sent_tokenize(final_sent)
+my_corpus = list(map(lambda x: nltk.word_tokenize(x), tokenized_final_sent))
 #print(my_corpus)
 with open("./Combined_Brown_seg.txt", 'w', encoding='utf8') as inputfile2:
     inputfile2.write(str(my_corpus))
