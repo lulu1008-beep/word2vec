@@ -28,21 +28,20 @@ with open('./Combined_Frown.txt', 'w', encoding='utf8') as outfile:
 
 with open("./Combined_Frown.txt", 'r', encoding='utf8') as inputfile:
     lines = inputfile.readlines()
-b = ''
+processed_sent_1 = ''
 for line in lines:
     line = line[7:]
-    b += line.lstrip()
-c = b.replace('\n', ' ')
-y1 = ''.join(c)
+    processed_sent_1 += line.lstrip()
+processed_sent_2 = processed_sent_1.replace('\n', ' ')
+final_sent_1 = ''.join(processed_sent_2)
 #print(y1)
-y = re.sub(r'\<.*?\>', '', y1)
+final_sent = re.sub(r'\<.*?\>', '', final_sent_1)
 
 with open("./Combined_Frown_no_number.txt", 'w', encoding='utf8') as inputfile1:
-    inputfile1.write(y)
+    inputfile1.write(final_sent)
 
-a = tokenize.sent_tokenize(y)
-my_corpus = list(map(lambda x: nltk.word_tokenize(x), a))
-# print(my_corpus)
+tokenized_final_sent = tokenize.sent_tokenize(final_sent)
+my_corpus = list(map(lambda x: nltk.word_tokenize(x), tokenized_final_sent))
 
 with open("./Combined_Frown_seg.txt", 'w', encoding='utf8') as inputfile2:
     inputfile2.write(str(my_corpus))
