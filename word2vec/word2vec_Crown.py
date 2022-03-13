@@ -25,8 +25,8 @@ with open('./Combined_Crown.txt', 'w', encoding='utf8') as outfile:
 
 with open("./Combined_Crown.txt", 'r', encoding='utf8') as text1:
     file1 = text1.read()
-    a = tokenize.sent_tokenize(file1)
-    my_corpus = list(map(lambda x: nltk.word_tokenize(x), a))
+    tokenized_final_sent = tokenize.sent_tokenize(file1)
+    my_corpus = list(map(lambda x: nltk.word_tokenize(x), tokenized_final_sent))
     print('my_corpus is done.')
 
 google_wv = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True)
