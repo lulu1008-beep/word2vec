@@ -25,9 +25,9 @@ with open('./top 100/Brown_LC_1.csv', 'r') as csvfile:
     print(cols)
 cols_new = list(set(cols))
 
-x = []
-y = []
-z = []
+x = [] # sim
+y = [] # ethnic group
+z = [] # warmth/competence attributes
 
 for att in cols_new:
 # todo "asians'
