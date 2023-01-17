@@ -4,30 +4,10 @@ from gensim.models import KeyedVectors
 
 model = KeyedVectors.load_word2vec_format("./Brown_vector.bin", encoding='utf8', binary=True)
 
-whites_new=list(set(['American', 'Americans', 'America',
-                   'U.S.', 'USA', 'U.S.A.', 'US', 'Germany', 'Germans',
-                   'German-born', 'German', 'European', 'Europe', 'Europeans',
-                   'England',
-                   'Russia', 'Russian', 'Russians', 'Copenhagen', 'France',
-                   'French', 'Frenchman', 'Frenchmen', 'Italian', 'Italy',
-                   'Italians', 'Britain', 'British', 'Florence',
-                   'Parisian', 'Paris', 'Islamic', 'Islam', 'Islamist', 'Islamists',
-                   'Iraq', "Iraqi", 'Iraqis', "Israel", "Israeli",
-                   'Israelis', "Muslims", 'Muslim', 'Israelites', "Saudi", "Iran", "Afghanistan",
-                   "Afghan", 'Afghans', "Arab", 'Arabia', 'Arabs',
-                   'Arabian', 'Arabic', "Judaism"]))
-
-blacks = list(set(['African', 'African-American', 'Africa', 'Egyptians', 'Egyptian', 'Africans', 'Egyptian', 'Egypt']))
-hispanics = list(
-    set(['Cuban-Americans', 'Cuban-Americans', 'Cuba', 'Hispanic', 'Cubans', 'Cuban', 'Mexico', 'Mexican', 'Mexicans',
-         'Hispanics']))
-
-asians = list(set(['Asian', 'Asia', 'Asiatic', 'Pakistani', 'Pakistan',
-                   'Pakistanis', 'Japan', 'Japanese', 'Korea', 'Korean', 'Koreans',
-                   'Beijing', 'Palestinian', 'Palestinians', 'Palestine',
-                   'Vietnam', 'Vietnamese', 'China', 'Chinatown',
-                   'Indian', 'India', 'Indians', 'Tibetan',
-                   'Tibet', 'Tibetans', 'Hindu', 'Hindus', 'Taiwanese', 'Taiwan']))
+whites_new=list(set([''])) # provide a list of White keywords
+blacks = list(set([''])) # provide a list of Black keywords
+hispanics = list(set([''])) # provide a list of Hispanic keywords
+asians = list(set(['']))# provide a list of Asian keywords
 
 
 read_file = pd.read_csv('./top 100/Brown_LC_new.txt')
