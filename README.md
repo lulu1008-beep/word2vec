@@ -10,7 +10,7 @@ To be specific, <br/>
   
   -The ``top 100.py`` file gets the words associated with Warm and Competence in this study;<br/>
   
-  -The ``SimScore_Brown_NegC_Whites`` folder contains coding necessary to obtain cosine similarity scores. Taking Brown corpus as an example, we run the coding file to  investigate the negative-Competence in relation to Whites.
+  -The ``SimScore_Brown_NegC_Whites`` folder contains coding necessary to obtain cosine similarity scores. Taking Brown corpus as an example, we run the coding file to  investigate the negative-Competence in relation to Whites.  
   
   
    
